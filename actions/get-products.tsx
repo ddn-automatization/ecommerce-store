@@ -1,7 +1,7 @@
 import { Product } from "@/types";
 import qs from "query-string";
 
-const URL=`${process.env.NEXT_PUBLIC_API_URL}/products`;
+const URL = `${process.env.NEXT_PUBLIC_API_URL ?? 'http://ecommerce-admin:3000'}/products`;
 
 interface Query {
   categoryId?: string;
