@@ -24,5 +24,16 @@ stages:
       inputs:
         containerRegistry: 'ddncr'
         repository: 'ecommerce-store'
-        command: 'buildAndPush'
+        command: 'build'
         Dockerfile: '**/Dockerfile'
+        tags: |
+          $(tag)
+          latest
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'ddncr'
+        repository: 'ecommerce-store'
+        command: 'push'
+        tags: |
+          $(tag)
+          latest
